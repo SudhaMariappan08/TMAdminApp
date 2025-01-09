@@ -4,11 +4,21 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import java.lang.Boolean;
 import java.lang.String;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class SaveUsersDTO {
+  @NotBlank
+  @Size(
+      max = 100
+  )
   private String name;
 
+  @NotBlank
+  @Size(
+      max = 100
+  )
   private String email;
 
   private Boolean isdeleted;
