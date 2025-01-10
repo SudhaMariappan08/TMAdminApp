@@ -26,7 +26,8 @@ public class Profiles {
   )
   @Column(
       nullable = false,
-      columnDefinition = "INT"
+      columnDefinition = "INT",
+      name = "id"
   )
   private Integer id;
 
@@ -41,7 +42,8 @@ public class Profiles {
   private Users users;
 
   @Column(
-      columnDefinition = "TEXT"
+      columnDefinition = "TEXT",
+      name = "bio"
   )
   private String bio;
 

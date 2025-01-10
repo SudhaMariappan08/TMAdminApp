@@ -14,7 +14,7 @@ public class UsersDTO {
 
   private String email;
 
-  private Boolean isdeleted;
+  private Boolean isDeleted;
 
   public Integer getId() {
     return id;
@@ -40,11 +40,11 @@ public class UsersDTO {
     this.email = email;
   }
 
-  public Boolean getIsdeleted() {
-    return isdeleted;
+  public Boolean getIsDeleted() {
+    return isDeleted;
   }
 
-  public void setIsdeleted(Boolean isdeleted) {
-    this.isdeleted = isdeleted;
+  public void setIsDeleted(Boolean isDeleted) {
+    this.isDeleted = isDeleted;
   }
 }

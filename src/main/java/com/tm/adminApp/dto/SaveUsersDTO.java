@@ -21,7 +21,7 @@ public class SaveUsersDTO {
   )
   private String email;
 
-  private Boolean isdeleted;
+  private Boolean isDeleted;
 
   public String getName() {
     return name;
@@ -39,11 +39,11 @@ public class SaveUsersDTO {
     this.email = email;
   }
 
-  public Boolean getIsdeleted() {
-    return isdeleted;
+  public Boolean getIsDeleted() {
+    return isDeleted;
   }
 
-  public void setIsdeleted(Boolean isdeleted) {
-    this.isdeleted = isdeleted;
+  public void setIsDeleted(Boolean isDeleted) {
+    this.isDeleted = isDeleted;
   }
 }

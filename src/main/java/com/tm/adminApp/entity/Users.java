@@ -23,24 +23,28 @@ public class Users {
   )
   @Column(
       nullable = false,
-      columnDefinition = "INT"
+      columnDefinition = "INT",
+      name = "id"
   )
   private Integer id;
 
   @Column(
       nullable = false,
-      columnDefinition = "VARCHAR"
+      columnDefinition = "VARCHAR",
+      name = "name"
   )
   private String name;
 
   @Column(
       nullable = false,
-      columnDefinition = "VARCHAR"
+      columnDefinition = "VARCHAR",
+      name = "email"
   )
   private String email;
 
   @Column(
-      columnDefinition = "BIT"
+      columnDefinition = "BIT",
+      name = "isDeleted"
   )
   private Boolean isDeleted;
 
