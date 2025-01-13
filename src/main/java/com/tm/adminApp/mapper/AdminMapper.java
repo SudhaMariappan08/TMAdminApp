@@ -6,11 +6,14 @@ import com.tm.adminApp.dto.UpdateAdminDTO;
 import com.tm.adminApp.entity.Admin;
 import java.util.List;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(
         componentModel = "spring",
-        nullValuePropertyMappingStrategy = org.mapstruct.NullValuePropertyMappingStrategy.SET_TO_NULL,
+        nullValueCheckStrategy = org.mapstruct.NullValueCheckStrategy.ALWAYS,
+        nullValuePropertyMappingStrategy = org.mapstruct.NullValuePropertyMappingStrategy.IGNORE,
         unmappedTargetPolicy = org.mapstruct.ReportingPolicy.IGNORE
 )
 public interface AdminMapper {
@@ -20,7 +23,11 @@ public interface AdminMapper {
 
     AdminDTO toDto(Admin entity);
 
-    Admin updateDtoToEntity(UpdateAdminDTO updateDto);
+    @Mapping(
+            target = "id",
+            ignore = true
+    )
+    Admin updateDtoToEntity(UpdateAdminDTO updateDto, @MappingTarget Admin entity);
 
     UpdateAdminDTO entitytoUpdateDto(Admin entity);
 

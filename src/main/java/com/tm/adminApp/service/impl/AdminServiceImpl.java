@@ -53,7 +53,7 @@ public class AdminServiceImpl implements AdminService {
   public AdminDTO updateAdmin(UpdateAdminDTO updateAdminDTO) {
     logger.info("AdminServiceImpl updateAdmin method initiated: {}");
     Admin admin = adminRepository.findById(updateAdminDTO.getId()).orElseThrow(() -> new IllegalArgumentException("Admin not found: ID " + updateAdminDTO.getId()));
-    admin = AdminMapper.INSTANCE.updateDtoToEntity(updateAdminDTO);
+    admin = AdminMapper.INSTANCE.updateDtoToEntity(updateAdminDTO,admin);
     Admin toBeUpdated = adminRepository.save(admin);
     logger.info("AdminServiceImpl updateAdmin method terminated: {}");
     return AdminMapper.INSTANCE.toDto(toBeUpdated);

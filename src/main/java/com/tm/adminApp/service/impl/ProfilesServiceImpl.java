@@ -60,7 +60,7 @@ public class ProfilesServiceImpl implements ProfilesService {
   public ProfilesDTO updateProfiles(UpdateProfilesDTO updateProfilesDTO) {
     logger.info("ProfilesServiceImpl updateProfiles method initiated: {}");
     Profiles profiles = profilesRepository.findById(updateProfilesDTO.getId()).orElseThrow(() -> new IllegalArgumentException("Profiles not found: ID " + updateProfilesDTO.getId()));
-    profiles = ProfilesMapper.INSTANCE.updateDtoToEntity(updateProfilesDTO);
+    profiles = ProfilesMapper.INSTANCE.updateDtoToEntity(updateProfilesDTO,profiles);
     Users users = usersRepository.findById(updateProfilesDTO.getUserId()).orElseThrow(() -> new IllegalArgumentException("Users not found: ID " + updateProfilesDTO.getUserId()));
     profiles.setUsers(users);
     Profiles toBeUpdated = profilesRepository.save(profiles);

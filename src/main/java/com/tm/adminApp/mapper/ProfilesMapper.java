@@ -6,11 +6,14 @@ import com.tm.adminApp.dto.UpdateProfilesDTO;
 import com.tm.adminApp.entity.Profiles;
 import java.util.List;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(
         componentModel = "spring",
-        nullValuePropertyMappingStrategy = org.mapstruct.NullValuePropertyMappingStrategy.SET_TO_NULL,
+        nullValueCheckStrategy = org.mapstruct.NullValueCheckStrategy.ALWAYS,
+        nullValuePropertyMappingStrategy = org.mapstruct.NullValuePropertyMappingStrategy.IGNORE,
         unmappedTargetPolicy = org.mapstruct.ReportingPolicy.IGNORE
 )
 public interface ProfilesMapper {
@@ -20,7 +23,11 @@ public interface ProfilesMapper {
 
     ProfilesDTO toDto(Profiles entity);
 
-    Profiles updateDtoToEntity(UpdateProfilesDTO updateDto);
+    @Mapping(
+            target = "id",
+            ignore = true
+    )
+    Profiles updateDtoToEntity(UpdateProfilesDTO updateDto, @MappingTarget Profiles entity);
 
     UpdateProfilesDTO entitytoUpdateDto(Profiles entity);
 

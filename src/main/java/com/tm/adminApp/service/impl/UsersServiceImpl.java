@@ -54,7 +54,7 @@ public class UsersServiceImpl implements UsersService {
   public UsersDTO updateUsers(UpdateUsersDTO updateUsersDTO) {
     logger.info("UsersServiceImpl updateUsers method initiated: {}");
     Users users = usersRepository.findById(updateUsersDTO.getId()).orElseThrow(() -> new IllegalArgumentException("Users not found: ID " + updateUsersDTO.getId()));
-    users = UsersMapper.INSTANCE.updateDtoToEntity(updateUsersDTO);
+    users = UsersMapper.INSTANCE.updateDtoToEntity(updateUsersDTO,users);
     Users toBeUpdated = usersRepository.save(users);
     logger.info("UsersServiceImpl updateUsers method terminated: {}");
     return UsersMapper.INSTANCE.toDto(toBeUpdated);
