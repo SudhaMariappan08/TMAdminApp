@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-01-13T20:13:00+0530",
+    date = "2025-01-16T12:02:05+0530",
     comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 1.4.0.v20210708-0430, environment: Java 17 (Eclipse Adoptium)"
 )
 @Component
@@ -37,6 +37,18 @@ public class UsersMapperImpl implements UsersMapper {
         if ( dto.getIsDeleted() != null ) {
             users.setIsDeleted( dto.getIsDeleted() );
         }
+        if ( dto.getCreatedBy() != null ) {
+            users.setCreatedBy( dto.getCreatedBy() );
+        }
+        if ( dto.getCreatedAt() != null ) {
+            users.setCreatedAt( dto.getCreatedAt() );
+        }
+        if ( dto.getUpdatedBy() != null ) {
+            users.setUpdatedBy( dto.getUpdatedBy() );
+        }
+        if ( dto.getUpdatedAt() != null ) {
+            users.setUpdatedAt( dto.getUpdatedAt() );
+        }
 
         return users;
     }
@@ -61,6 +73,18 @@ public class UsersMapperImpl implements UsersMapper {
         if ( entity.getIsDeleted() != null ) {
             usersDTO.setIsDeleted( entity.getIsDeleted() );
         }
+        if ( entity.getCreatedBy() != null ) {
+            usersDTO.setCreatedBy( entity.getCreatedBy() );
+        }
+        if ( entity.getCreatedAt() != null ) {
+            usersDTO.setCreatedAt( entity.getCreatedAt() );
+        }
+        if ( entity.getUpdatedBy() != null ) {
+            usersDTO.setUpdatedBy( entity.getUpdatedBy() );
+        }
+        if ( entity.getUpdatedAt() != null ) {
+            usersDTO.setUpdatedAt( entity.getUpdatedAt() );
+        }
 
         return usersDTO;
     }
@@ -79,6 +103,18 @@ public class UsersMapperImpl implements UsersMapper {
         }
         if ( updateDto.getIsDeleted() != null ) {
             entity.setIsDeleted( updateDto.getIsDeleted() );
+        }
+        if ( updateDto.getCreatedBy() != null ) {
+            entity.setCreatedBy( updateDto.getCreatedBy() );
+        }
+        if ( updateDto.getCreatedAt() != null ) {
+            entity.setCreatedAt( updateDto.getCreatedAt() );
+        }
+        if ( updateDto.getUpdatedBy() != null ) {
+            entity.setUpdatedBy( updateDto.getUpdatedBy() );
+        }
+        if ( updateDto.getUpdatedAt() != null ) {
+            entity.setUpdatedAt( updateDto.getUpdatedAt() );
         }
 
         return entity;
@@ -104,6 +140,18 @@ public class UsersMapperImpl implements UsersMapper {
         if ( entity.getIsDeleted() != null ) {
             updateUsersDTO.setIsDeleted( entity.getIsDeleted() );
         }
+        if ( entity.getCreatedBy() != null ) {
+            updateUsersDTO.setCreatedBy( entity.getCreatedBy() );
+        }
+        if ( entity.getCreatedAt() != null ) {
+            updateUsersDTO.setCreatedAt( entity.getCreatedAt() );
+        }
+        if ( entity.getUpdatedBy() != null ) {
+            updateUsersDTO.setUpdatedBy( entity.getUpdatedBy() );
+        }
+        if ( entity.getUpdatedAt() != null ) {
+            updateUsersDTO.setUpdatedAt( entity.getUpdatedAt() );
+        }
 
         return updateUsersDTO;
     }
@@ -125,6 +173,18 @@ public class UsersMapperImpl implements UsersMapper {
         if ( saveDto.getIsDeleted() != null ) {
             users.setIsDeleted( saveDto.getIsDeleted() );
         }
+        if ( saveDto.getCreatedBy() != null ) {
+            users.setCreatedBy( saveDto.getCreatedBy() );
+        }
+        if ( saveDto.getCreatedAt() != null ) {
+            users.setCreatedAt( saveDto.getCreatedAt() );
+        }
+        if ( saveDto.getUpdatedBy() != null ) {
+            users.setUpdatedBy( saveDto.getUpdatedBy() );
+        }
+        if ( saveDto.getUpdatedAt() != null ) {
+            users.setUpdatedAt( saveDto.getUpdatedAt() );
+        }
 
         return users;
     }
@@ -145,6 +205,18 @@ public class UsersMapperImpl implements UsersMapper {
         }
         if ( entity.getIsDeleted() != null ) {
             saveUsersDTO.setIsDeleted( entity.getIsDeleted() );
+        }
+        if ( entity.getCreatedBy() != null ) {
+            saveUsersDTO.setCreatedBy( entity.getCreatedBy() );
+        }
+        if ( entity.getCreatedAt() != null ) {
+            saveUsersDTO.setCreatedAt( entity.getCreatedAt() );
+        }
+        if ( entity.getUpdatedBy() != null ) {
+            saveUsersDTO.setUpdatedBy( entity.getUpdatedBy() );
+        }
+        if ( entity.getUpdatedAt() != null ) {
+            saveUsersDTO.setUpdatedAt( entity.getUpdatedAt() );
         }
 
         return saveUsersDTO;

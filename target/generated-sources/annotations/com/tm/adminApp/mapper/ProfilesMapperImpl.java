@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-01-13T20:13:00+0530",
+    date = "2025-01-16T12:02:05+0530",
     comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 1.4.0.v20210708-0430, environment: Java 17 (Eclipse Adoptium)"
 )
 @Component
@@ -169,6 +169,18 @@ public class ProfilesMapperImpl implements ProfilesMapper {
         if ( usersDTO.getIsDeleted() != null ) {
             users.setIsDeleted( usersDTO.getIsDeleted() );
         }
+        if ( usersDTO.getCreatedBy() != null ) {
+            users.setCreatedBy( usersDTO.getCreatedBy() );
+        }
+        if ( usersDTO.getCreatedAt() != null ) {
+            users.setCreatedAt( usersDTO.getCreatedAt() );
+        }
+        if ( usersDTO.getUpdatedBy() != null ) {
+            users.setUpdatedBy( usersDTO.getUpdatedBy() );
+        }
+        if ( usersDTO.getUpdatedAt() != null ) {
+            users.setUpdatedAt( usersDTO.getUpdatedAt() );
+        }
 
         return users;
     }
@@ -191,6 +203,18 @@ public class ProfilesMapperImpl implements ProfilesMapper {
         }
         if ( users.getIsDeleted() != null ) {
             usersDTO.setIsDeleted( users.getIsDeleted() );
+        }
+        if ( users.getCreatedBy() != null ) {
+            usersDTO.setCreatedBy( users.getCreatedBy() );
+        }
+        if ( users.getCreatedAt() != null ) {
+            usersDTO.setCreatedAt( users.getCreatedAt() );
+        }
+        if ( users.getUpdatedBy() != null ) {
+            usersDTO.setUpdatedBy( users.getUpdatedBy() );
+        }
+        if ( users.getUpdatedAt() != null ) {
+            usersDTO.setUpdatedAt( users.getUpdatedAt() );
         }
 
         return usersDTO;
