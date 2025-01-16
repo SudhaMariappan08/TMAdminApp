@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-01-10T15:59:23+0530",
+    date = "2025-01-13T20:13:00+0530",
     comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 1.4.0.v20210708-0430, environment: Java 17 (Eclipse Adoptium)"
 )
 @Component
@@ -27,9 +27,15 @@ public class ProfilesMapperImpl implements ProfilesMapper {
 
         Profiles profiles = new Profiles();
 
-        profiles.setId( dto.getId() );
-        profiles.setUsers( usersDTOToUsers( dto.getUsers() ) );
-        profiles.setBio( dto.getBio() );
+        if ( dto.getId() != null ) {
+            profiles.setId( dto.getId() );
+        }
+        if ( dto.getUsers() != null ) {
+            profiles.setUsers( usersDTOToUsers( dto.getUsers() ) );
+        }
+        if ( dto.getBio() != null ) {
+            profiles.setBio( dto.getBio() );
+        }
 
         return profiles;
     }
@@ -42,25 +48,30 @@ public class ProfilesMapperImpl implements ProfilesMapper {
 
         ProfilesDTO profilesDTO = new ProfilesDTO();
 
-        profilesDTO.setId( entity.getId() );
-        profilesDTO.setUsers( usersToUsersDTO( entity.getUsers() ) );
-        profilesDTO.setBio( entity.getBio() );
+        if ( entity.getId() != null ) {
+            profilesDTO.setId( entity.getId() );
+        }
+        if ( entity.getUsers() != null ) {
+            profilesDTO.setUsers( usersToUsersDTO( entity.getUsers() ) );
+        }
+        if ( entity.getBio() != null ) {
+            profilesDTO.setBio( entity.getBio() );
+        }
 
         return profilesDTO;
     }
 
     @Override
-    public Profiles updateDtoToEntity(UpdateProfilesDTO updateDto) {
+    public Profiles updateDtoToEntity(UpdateProfilesDTO updateDto, Profiles entity) {
         if ( updateDto == null ) {
-            return null;
+            return entity;
         }
 
-        Profiles profiles = new Profiles();
+        if ( updateDto.getBio() != null ) {
+            entity.setBio( updateDto.getBio() );
+        }
 
-        profiles.setId( updateDto.getId() );
-        profiles.setBio( updateDto.getBio() );
-
-        return profiles;
+        return entity;
     }
 
     @Override
@@ -71,8 +82,12 @@ public class ProfilesMapperImpl implements ProfilesMapper {
 
         UpdateProfilesDTO updateProfilesDTO = new UpdateProfilesDTO();
 
-        updateProfilesDTO.setId( entity.getId() );
-        updateProfilesDTO.setBio( entity.getBio() );
+        if ( entity.getId() != null ) {
+            updateProfilesDTO.setId( entity.getId() );
+        }
+        if ( entity.getBio() != null ) {
+            updateProfilesDTO.setBio( entity.getBio() );
+        }
 
         return updateProfilesDTO;
     }
@@ -85,7 +100,9 @@ public class ProfilesMapperImpl implements ProfilesMapper {
 
         Profiles profiles = new Profiles();
 
-        profiles.setBio( saveDto.getBio() );
+        if ( saveDto.getBio() != null ) {
+            profiles.setBio( saveDto.getBio() );
+        }
 
         return profiles;
     }
@@ -98,7 +115,9 @@ public class ProfilesMapperImpl implements ProfilesMapper {
 
         SaveProfilesDTO saveProfilesDTO = new SaveProfilesDTO();
 
-        saveProfilesDTO.setBio( entity.getBio() );
+        if ( entity.getBio() != null ) {
+            saveProfilesDTO.setBio( entity.getBio() );
+        }
 
         return saveProfilesDTO;
     }
@@ -138,9 +157,18 @@ public class ProfilesMapperImpl implements ProfilesMapper {
 
         Users users = new Users();
 
-        users.setId( usersDTO.getId() );
-        users.setName( usersDTO.getName() );
-        users.setEmail( usersDTO.getEmail() );
+        if ( usersDTO.getId() != null ) {
+            users.setId( usersDTO.getId() );
+        }
+        if ( usersDTO.getName() != null ) {
+            users.setName( usersDTO.getName() );
+        }
+        if ( usersDTO.getEmail() != null ) {
+            users.setEmail( usersDTO.getEmail() );
+        }
+        if ( usersDTO.getIsDeleted() != null ) {
+            users.setIsDeleted( usersDTO.getIsDeleted() );
+        }
 
         return users;
     }
@@ -152,9 +180,18 @@ public class ProfilesMapperImpl implements ProfilesMapper {
 
         UsersDTO usersDTO = new UsersDTO();
 
-        usersDTO.setId( users.getId() );
-        usersDTO.setName( users.getName() );
-        usersDTO.setEmail( users.getEmail() );
+        if ( users.getId() != null ) {
+            usersDTO.setId( users.getId() );
+        }
+        if ( users.getName() != null ) {
+            usersDTO.setName( users.getName() );
+        }
+        if ( users.getEmail() != null ) {
+            usersDTO.setEmail( users.getEmail() );
+        }
+        if ( users.getIsDeleted() != null ) {
+            usersDTO.setIsDeleted( users.getIsDeleted() );
+        }
 
         return usersDTO;
     }

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-01-10T15:59:23+0530",
+    date = "2025-01-13T20:13:00+0530",
     comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 1.4.0.v20210708-0430, environment: Java 17 (Eclipse Adoptium)"
 )
 @Component
@@ -25,9 +25,18 @@ public class UsersMapperImpl implements UsersMapper {
 
         Users users = new Users();
 
-        users.setId( dto.getId() );
-        users.setName( dto.getName() );
-        users.setEmail( dto.getEmail() );
+        if ( dto.getId() != null ) {
+            users.setId( dto.getId() );
+        }
+        if ( dto.getName() != null ) {
+            users.setName( dto.getName() );
+        }
+        if ( dto.getEmail() != null ) {
+            users.setEmail( dto.getEmail() );
+        }
+        if ( dto.getIsDeleted() != null ) {
+            users.setIsDeleted( dto.getIsDeleted() );
+        }
 
         return users;
     }
@@ -40,26 +49,39 @@ public class UsersMapperImpl implements UsersMapper {
 
         UsersDTO usersDTO = new UsersDTO();
 
-        usersDTO.setId( entity.getId() );
-        usersDTO.setName( entity.getName() );
-        usersDTO.setEmail( entity.getEmail() );
+        if ( entity.getId() != null ) {
+            usersDTO.setId( entity.getId() );
+        }
+        if ( entity.getName() != null ) {
+            usersDTO.setName( entity.getName() );
+        }
+        if ( entity.getEmail() != null ) {
+            usersDTO.setEmail( entity.getEmail() );
+        }
+        if ( entity.getIsDeleted() != null ) {
+            usersDTO.setIsDeleted( entity.getIsDeleted() );
+        }
 
         return usersDTO;
     }
 
     @Override
-    public Users updateDtoToEntity(UpdateUsersDTO updateDto) {
+    public Users updateDtoToEntity(UpdateUsersDTO updateDto, Users entity) {
         if ( updateDto == null ) {
-            return null;
+            return entity;
         }
 
-        Users users = new Users();
+        if ( updateDto.getName() != null ) {
+            entity.setName( updateDto.getName() );
+        }
+        if ( updateDto.getEmail() != null ) {
+            entity.setEmail( updateDto.getEmail() );
+        }
+        if ( updateDto.getIsDeleted() != null ) {
+            entity.setIsDeleted( updateDto.getIsDeleted() );
+        }
 
-        users.setId( updateDto.getId() );
-        users.setName( updateDto.getName() );
-        users.setEmail( updateDto.getEmail() );
-
-        return users;
+        return entity;
     }
 
     @Override
@@ -70,9 +92,18 @@ public class UsersMapperImpl implements UsersMapper {
 
         UpdateUsersDTO updateUsersDTO = new UpdateUsersDTO();
 
-        updateUsersDTO.setId( entity.getId() );
-        updateUsersDTO.setName( entity.getName() );
-        updateUsersDTO.setEmail( entity.getEmail() );
+        if ( entity.getId() != null ) {
+            updateUsersDTO.setId( entity.getId() );
+        }
+        if ( entity.getName() != null ) {
+            updateUsersDTO.setName( entity.getName() );
+        }
+        if ( entity.getEmail() != null ) {
+            updateUsersDTO.setEmail( entity.getEmail() );
+        }
+        if ( entity.getIsDeleted() != null ) {
+            updateUsersDTO.setIsDeleted( entity.getIsDeleted() );
+        }
 
         return updateUsersDTO;
     }
@@ -85,8 +116,15 @@ public class UsersMapperImpl implements UsersMapper {
 
         Users users = new Users();
 
-        users.setName( saveDto.getName() );
-        users.setEmail( saveDto.getEmail() );
+        if ( saveDto.getName() != null ) {
+            users.setName( saveDto.getName() );
+        }
+        if ( saveDto.getEmail() != null ) {
+            users.setEmail( saveDto.getEmail() );
+        }
+        if ( saveDto.getIsDeleted() != null ) {
+            users.setIsDeleted( saveDto.getIsDeleted() );
+        }
 
         return users;
     }
@@ -99,8 +137,15 @@ public class UsersMapperImpl implements UsersMapper {
 
         SaveUsersDTO saveUsersDTO = new SaveUsersDTO();
 
-        saveUsersDTO.setName( entity.getName() );
-        saveUsersDTO.setEmail( entity.getEmail() );
+        if ( entity.getName() != null ) {
+            saveUsersDTO.setName( entity.getName() );
+        }
+        if ( entity.getEmail() != null ) {
+            saveUsersDTO.setEmail( entity.getEmail() );
+        }
+        if ( entity.getIsDeleted() != null ) {
+            saveUsersDTO.setIsDeleted( entity.getIsDeleted() );
+        }
 
         return saveUsersDTO;
     }

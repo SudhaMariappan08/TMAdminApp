@@ -11,7 +11,7 @@
     <artifactId>admin-app</artifactId>
     <version>1.0.0</version>
     <name>TMAdminApp</name>
-    <description>Description of the Admin app project</description>
+    <description/>
     <properties>
         <java.version>8</java.version>
     </properties>

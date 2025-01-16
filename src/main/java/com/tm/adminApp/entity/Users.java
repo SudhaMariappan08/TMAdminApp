@@ -3,6 +3,7 @@ package com.tm.adminApp.entity;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -48,6 +49,30 @@ public class Users {
   )
   private Boolean isDeleted;
 
+  @Column(
+      columnDefinition = "VARCHAR",
+      name = "created_by"
+  )
+  private String createdBy;
+
+  @Column(
+      columnDefinition = "DATETIME",
+      name = "created_at"
+  )
+  private Date createdAt;
+
+  @Column(
+      columnDefinition = "VARCHAR",
+      name = "updated_by"
+  )
+  private String updatedBy;
+
+  @Column(
+      columnDefinition = "DATETIME",
+      name = "updated_at"
+  )
+  private Date updatedAt;
+
   public Integer getId() {
     return id;
   }
@@ -78,5 +103,37 @@ public class Users {
 
   public void setIsDeleted(Boolean isDeleted) {
     this.isDeleted = isDeleted;
+  }
+
+  public String getCreatedBy() {
+    return createdBy;
+  }
+
+  public void setCreatedBy(String createdBy) {
+    this.createdBy = createdBy;
+  }
+
+  public Date getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(Date createdAt) {
+    this.createdAt = createdAt;
+  }
+
+  public String getUpdatedBy() {
+    return updatedBy;
+  }
+
+  public void setUpdatedBy(String updatedBy) {
+    this.updatedBy = updatedBy;
+  }
+
+  public Date getUpdatedAt() {
+    return updatedAt;
+  }
+
+  public void setUpdatedAt(Date updatedAt) {
+    this.updatedAt = updatedAt;
   }
 }

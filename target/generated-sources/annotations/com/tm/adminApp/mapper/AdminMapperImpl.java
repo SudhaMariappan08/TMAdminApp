@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-01-10T15:59:23+0530",
+    date = "2025-01-13T20:13:00+0530",
     comments = "version: 1.6.3, compiler: Eclipse JDT (IDE) 1.4.0.v20210708-0430, environment: Java 17 (Eclipse Adoptium)"
 )
 @Component
@@ -25,9 +25,15 @@ public class AdminMapperImpl implements AdminMapper {
 
         Admin admin = new Admin();
 
-        admin.setId( dto.getId() );
-        admin.setName( dto.getName() );
-        admin.setEmail( dto.getEmail() );
+        if ( dto.getId() != null ) {
+            admin.setId( dto.getId() );
+        }
+        if ( dto.getName() != null ) {
+            admin.setName( dto.getName() );
+        }
+        if ( dto.getEmail() != null ) {
+            admin.setEmail( dto.getEmail() );
+        }
 
         return admin;
     }
@@ -40,26 +46,33 @@ public class AdminMapperImpl implements AdminMapper {
 
         AdminDTO adminDTO = new AdminDTO();
 
-        adminDTO.setId( entity.getId() );
-        adminDTO.setName( entity.getName() );
-        adminDTO.setEmail( entity.getEmail() );
+        if ( entity.getId() != null ) {
+            adminDTO.setId( entity.getId() );
+        }
+        if ( entity.getName() != null ) {
+            adminDTO.setName( entity.getName() );
+        }
+        if ( entity.getEmail() != null ) {
+            adminDTO.setEmail( entity.getEmail() );
+        }
 
         return adminDTO;
     }
 
     @Override
-    public Admin updateDtoToEntity(UpdateAdminDTO updateDto) {
+    public Admin updateDtoToEntity(UpdateAdminDTO updateDto, Admin entity) {
         if ( updateDto == null ) {
-            return null;
+            return entity;
         }
 
-        Admin admin = new Admin();
+        if ( updateDto.getName() != null ) {
+            entity.setName( updateDto.getName() );
+        }
+        if ( updateDto.getEmail() != null ) {
+            entity.setEmail( updateDto.getEmail() );
+        }
 
-        admin.setId( updateDto.getId() );
-        admin.setName( updateDto.getName() );
-        admin.setEmail( updateDto.getEmail() );
-
-        return admin;
+        return entity;
     }
 
     @Override
@@ -70,9 +83,15 @@ public class AdminMapperImpl implements AdminMapper {
 
         UpdateAdminDTO updateAdminDTO = new UpdateAdminDTO();
 
-        updateAdminDTO.setId( entity.getId() );
-        updateAdminDTO.setName( entity.getName() );
-        updateAdminDTO.setEmail( entity.getEmail() );
+        if ( entity.getId() != null ) {
+            updateAdminDTO.setId( entity.getId() );
+        }
+        if ( entity.getName() != null ) {
+            updateAdminDTO.setName( entity.getName() );
+        }
+        if ( entity.getEmail() != null ) {
+            updateAdminDTO.setEmail( entity.getEmail() );
+        }
 
         return updateAdminDTO;
     }
@@ -85,8 +104,12 @@ public class AdminMapperImpl implements AdminMapper {
 
         Admin admin = new Admin();
 
-        admin.setName( saveDto.getName() );
-        admin.setEmail( saveDto.getEmail() );
+        if ( saveDto.getName() != null ) {
+            admin.setName( saveDto.getName() );
+        }
+        if ( saveDto.getEmail() != null ) {
+            admin.setEmail( saveDto.getEmail() );
+        }
 
         return admin;
     }
@@ -99,8 +122,12 @@ public class AdminMapperImpl implements AdminMapper {
 
         SaveAdminDTO saveAdminDTO = new SaveAdminDTO();
 
-        saveAdminDTO.setName( entity.getName() );
-        saveAdminDTO.setEmail( entity.getEmail() );
+        if ( entity.getName() != null ) {
+            saveAdminDTO.setName( entity.getName() );
+        }
+        if ( entity.getEmail() != null ) {
+            saveAdminDTO.setEmail( entity.getEmail() );
+        }
 
         return saveAdminDTO;
     }
