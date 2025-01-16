@@ -46,8 +46,7 @@ public class UsersServiceImpl implements UsersService {
   public UsersDTO saveUsers(SaveUsersDTO saveUsersDTO) {
     logger.info("UsersServiceImpl saveUsers method initiated: {}");
     Users users = UsersMapper.INSTANCE.saveDtoToEntity(saveUsersDTO);
-    users.setcreatedAt(new Date();;
-    users.setupdatedAt(new Date();;
+    users.setCreatedAt(new java.util.Date());
     Users toBesaved = usersRepository.save(users);
     logger.info("UsersServiceImpl saveUsers method terminated: {}");
     return UsersMapper.INSTANCE.toDto(toBesaved);
@@ -57,6 +56,7 @@ public class UsersServiceImpl implements UsersService {
     logger.info("UsersServiceImpl updateUsers method initiated: {}");
     Users users = usersRepository.findById(updateUsersDTO.getId()).orElseThrow(() -> new IllegalArgumentException("Users not found: ID " + updateUsersDTO.getId()));
     users = UsersMapper.INSTANCE.updateDtoToEntity(updateUsersDTO,users);
+    users.setUpdatedAt(new java.util.Date());
     Users toBeUpdated = usersRepository.save(users);
     logger.info("UsersServiceImpl updateUsers method terminated: {}");
     return UsersMapper.INSTANCE.toDto(toBeUpdated);
