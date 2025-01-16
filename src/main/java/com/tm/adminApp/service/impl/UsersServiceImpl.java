@@ -46,6 +46,8 @@ public class UsersServiceImpl implements UsersService {
   public UsersDTO saveUsers(SaveUsersDTO saveUsersDTO) {
     logger.info("UsersServiceImpl saveUsers method initiated: {}");
     Users users = UsersMapper.INSTANCE.saveDtoToEntity(saveUsersDTO);
+    users.setcreatedAt(new Date();;
+    users.setupdatedAt(new Date();;
     Users toBesaved = usersRepository.save(users);
     logger.info("UsersServiceImpl saveUsers method terminated: {}");
     return UsersMapper.INSTANCE.toDto(toBesaved);
