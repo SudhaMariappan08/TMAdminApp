@@ -8,6 +8,7 @@ import com.tm.adminApp.mapper.UsersMapper;
 import com.tm.adminApp.repository.UsersRepository;
 import com.tm.adminApp.service.UsersService;
 import java.lang.Override;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -46,7 +47,7 @@ public class UsersServiceImpl implements UsersService {
   public UsersDTO saveUsers(SaveUsersDTO saveUsersDTO) {
     logger.info("UsersServiceImpl saveUsers method initiated: {}");
     Users users = UsersMapper.INSTANCE.saveDtoToEntity(saveUsersDTO);
-    users.setCreatedAt(new java.util.Date());
+    users.setCreatedAt(new Date());
     Users toBesaved = usersRepository.save(users);
     logger.info("UsersServiceImpl saveUsers method terminated: {}");
     return UsersMapper.INSTANCE.toDto(toBesaved);
@@ -56,7 +57,7 @@ public class UsersServiceImpl implements UsersService {
     logger.info("UsersServiceImpl updateUsers method initiated: {}");
     Users users = usersRepository.findById(updateUsersDTO.getId()).orElseThrow(() -> new IllegalArgumentException("Users not found: ID " + updateUsersDTO.getId()));
     users = UsersMapper.INSTANCE.updateDtoToEntity(updateUsersDTO,users);
-    users.setUpdatedAt(new java.util.Date());
+    users.setUpdatedAt(new Date());
     Users toBeUpdated = usersRepository.save(users);
     logger.info("UsersServiceImpl updateUsers method terminated: {}");
     return UsersMapper.INSTANCE.toDto(toBeUpdated);
